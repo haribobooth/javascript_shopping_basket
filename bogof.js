@@ -26,7 +26,7 @@ bogof = {
         this.quantities[item.type] -= 1;
       }
       this.deduction += item.price * (this.quantities[item.type] / 2);
-      this.quantities[item.type] -= 2;
+      this.quantities[item.type] = 0;
     }
   },
 
