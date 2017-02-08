@@ -46,4 +46,19 @@ describe('bogof', function(){
     basket.checkDeal(bogof);
     assert.equal(27.97, basket.finalTotal);
   });
+
+  it('should be able to perform multiple bogofs', function(){
+    basket.empty();
+    basket.finalTotal = undefined;
+    bogof.quantities = {}
+    bogof.deduction = 0;
+    basket.addItem(item.beer);
+    basket.addItem(item.beer);
+    basket.addItem(item.beer);
+    basket.addItem(item.beer);
+    basket.addItem(item.crisps);
+    basket.addItem(item.crisps);
+    basket.checkDeal(bogof);
+    assert.equal(27.97, basket.finalTotal);
+  });
 });
